@@ -1,0 +1,52 @@
+---
+title: "Ejemplo título"
+author: "Ejemplo Autor"
+date: "18/1/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(ggplot2)
+library(DT)
+```
+
+### Tabla {style="color: red"}
+
+**Este es un data frame:**
+
+```{r}
+tabla <- data.frame(Columna1 = 1:10, Columna2 = 11:20, Columna3 = 21:30, Columna4 = 31:40)
+datatable(tabla)
+```
+
+### Gráfica 1 {style="color: green"}
+
+*Esta es la gráfica 1*
+
+```{r}
+ggplot(tabla) +
+  aes(x = Columna1, y = Columna2) +
+  geom_line(size = 0.5, colour = "#228B22") +
+  labs(
+    x = "Ejemplo eje x",
+    y = "Ejemplo eje y",
+    title = "Ejemplo tíitulo",
+    subtitle = "Ejemplo subtítulo",
+    caption = "Ejemplo fuente"
+  ) +
+  theme_minimal()
+```
+
+### Gráfica 2 {style="color: pink"}
+
+[Esta es la gráfica 2]{.ul}
+
+```{r}
+ggplot(tabla) +
+  aes(x = Columna3, y = Columna4) +
+  geom_line(size = 0.5, colour = "#440154") +
+  coord_flip() +
+  theme_minimal()
+```
+
+### [***`¡Muchas gracias por ver este tutorial!`***]{.ul}
